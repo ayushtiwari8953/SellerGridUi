@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Review Management Dashboard</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f7fb;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e293b;
+  color: white;
+  position: fixed;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.main {
+  margin-left: 240px;
+  padding: 20px;
+}
+
+ .navbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 0;
+  color: gray;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.table {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.positive { color: green; }
+.negative { color: red; }
+.neutral { color: orange; }
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reply { background: #3b82f6; color: white; }
+.resolve { background: #22c55e; color: white; }
+
+.ai-box {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>SellerGrid</h2>
+  <a href="#">Dashboard</a>
+  <a href="#">All Reviews</a>
+  <a href="#">Analytics</a>
+  <a href="#">Settings</a>
+</div>
+
+<div class="main">
+
+     <div class="navbar">
+      <input type="text" placeholder="Search reviews...">
+      <div>User 👤</div>
+    </div>
+
+
+  <div class="header">
+    <div>
+      <!-- <input type="text" placeholder="Search reviews..."> -->
+      <select>
+        <option>All Platforms</option>
+        <option>Amazon</option>
+        <option>Flipkart</option>
+      </select>
+      <select>
+        <option>All Sentiments</option>
+        <option>Positive</option>
+        <option>Negative</option>
+        <option>Neutral</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Total Reviews</h3>
+      <p>2,450</p>
+    </div>
+    <div class="card">
+      <h3>Positive</h3>
+      <p class="positive">8,200</p>
+    </div>
+    <div class="card">
+      <h3>Negative</h3>
+      <p class="negative">2,000</p>
+    </div>
+    <div class="card">
+      <h3>Pending</h3>
+      <p class="neutral">500</p>
+    </div>
+  </div>
+
+  <div class="table">
+    <h2>All Reviews</h2>
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Platform</th>
+        <th>Rating</th>
+        <th>Review</th>
+        <th>Sentiment</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>Rahul</td>
+        <td>Amazon</td>
+        <td>5 ⭐</td>
+        <td>Loved the product</td>
+        <td class="positive">Positive</td>
+        <td><button class="reply">Reply</button></td>
+      </tr>
+
+      <tr>
+        <td>Anjali</td>
+        <td>Flipkart</td>
+        <td>2 ⭐</td>
+        <td>Very bad quality</td>
+        <td class="negative">Negative</td>
+        <td>
+          <button class="reply">Reply</button>
+          <button class="resolve">Resolve</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Amit</td>
+        <td>Website</td>
+        <td>3 ⭐</td>
+        <td>Average product</td>
+        <td class="neutral">Neutral</td>
+        <td><button class="reply">Reply</button></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="ai-box">
+    <h2>AI Insights</h2>
+    <p>• Most complaints are about product quality.</p>
+    <p>• Positive reviews mention fast delivery.</p>
+    <p>• Suggest improving packaging.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
